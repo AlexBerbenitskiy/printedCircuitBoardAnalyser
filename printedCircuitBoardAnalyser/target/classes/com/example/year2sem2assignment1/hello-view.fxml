@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="448.0" prefWidth="962.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.year2sem2assignment1.MainController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <MenuButton mnemonicParsing="false" text="MenuButton">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#openFile" text="Choose File" />
+                <MenuItem mnemonicParsing="false" onAction="#changeToBW" text="Black and White" />
+              </items>
+            </MenuButton>
+         </children>
+      </VBox>
+      <ImageView fx:id="imageView" layoutX="100.0" layoutY="25.0" onMouseClicked="#imageHandle" onTouchPressed="#imageHandle" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="closeButton" layoutX="917.0" layoutY="1.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" text="Close" />
+      <ImageView fx:id="imageViewBW" fitHeight="250.0" fitWidth="350.0" layoutX="567.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true" />
+      <ButtonBar layoutX="244.0" layoutY="394.0" prefHeight="40.0" prefWidth="607.0">
+        <buttons>
+          <Button mnemonicParsing="false" onAction="#removeNoise" text="Remove Noise" />
+            <Button mnemonicParsing="false" onAction="#randomColours" text="Random Colours" />
+            <Slider fx:id="noiseSlider" majorTickUnit="100.0" max="310.0" min="10.0" showTickLabels="true" showTickMarks="true" value="1.0" />
+            <Button mnemonicParsing="false" onAction="#sampleColours" text="Sampled Colours" />
+        </buttons>
+      </ButtonBar>
+      <Label fx:id="totalLabel" layoutX="154.0" layoutY="395.0" prefHeight="40.0" prefWidth="89.0" />
+      <Label layoutX="22.0" layoutY="394.0" prefHeight="38.0" prefWidth="106.0" text="Total Components:" />
+   </children>
+</AnchorPane>
